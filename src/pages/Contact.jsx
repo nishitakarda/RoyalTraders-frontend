@@ -1,72 +1,90 @@
 import React from "react";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import Title from "../components/Title";
+import { assets } from '../assets/frontend_assets/assets';
+import { MdLocationOn, MdEmail, MdAccessTime } from "react-icons/md";
+import { BsTelephoneFill } from "react-icons/bs";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <section className="px-6 py-12 bg-white text-gray-800">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl font-bold text-[#c0823b] text-center mb-6">
-          Contact Us
-        </h2>
-        <p className="text-center text-gray-600 max-w-xl mx-auto mb-10">
-          Have a question, feedback, or bulk inquiry? We’d love to hear from you.
-        </p>
+    <div className="px-4 sm:px-12 pt-24 border-t text-gray-800">
+      {/* Title */}
+      <div className="text-4xl font-bold text-center pt-8 border-t">
+        <Title text1="CONTACT" text2="US" />
+      </div>
 
-        <div className="grid gap-10 md:grid-cols-2">
-          {/* Contact Info */}
-          <div className="space-y-6">
-            <div className="flex items-start gap-4">
-              <FaPhone className="text-[#c0823b] text-xl mt-1" />
-              <div>
-                <h4 className="font-semibold">Phone</h4>
-                <p className="text-sm text-gray-600">+91 98765 43210</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <FaEnvelope className="text-[#c0823b] text-xl mt-1" />
-              <div>
-                <h4 className="font-semibold">Email</h4>
-                <p className="text-sm text-gray-600">support@royaltraders.in</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <FaMapMarkerAlt className="text-[#c0823b] text-xl mt-1" />
-              <div>
-                <h4 className="font-semibold">Office Address</h4>
-                <p className="text-sm text-gray-600">
-                  123, Trade Tower, Mumbai, Maharashtra, India
-                </p>
-              </div>
-            </div>
+      {/* Contact Info with Image */}
+      <div className="my-16 flex flex-col md:flex-row items-center justify-center gap-10 mb-28">
+        {/* Image */}
+        <img
+          className="w-full max-w-sm md:max-w-md rounded-xl shadow-md"
+          src={assets.contact_img}
+          alt="Contact"
+        />
+
+        {/* Info */}
+        <div className="text-lg text-gray-700 flex flex-col items-start gap-8 max-w-lg">
+          <div>
+            <p className="font-semibold text-xl text-gray-800 flex items-center gap-2 mb-1">
+              <MdLocationOn className="text-2xl text-red-500" />
+              Our Store
+            </p>
+            <p className="pl-7">
+              Shop No. 09, Jawahar Marg, Siyaganj<br />
+              Indore, MP - 452007
+            </p>
           </div>
 
-          {/* Contact Form */}
-          <form className="space-y-4 bg-[#f8f8f8] p-6 rounded-xl shadow">
-            <input
-              type="text"
-              placeholder="Full Name"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none"
-            />
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none"
-            />
-            <textarea
-              rows="5"
-              placeholder="Your Message"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none resize-none"
-            />
-            <button
-              type="submit"
-              className="w-full bg-[#c0823b] text-white py-2 px-6 rounded-lg hover:bg-[#a56e30] transition"
-            >
-              Send Message
-            </button>
-          </form>
+          <div>
+            <p className="flex items-center gap-2">
+              <BsTelephoneFill className="text-blue-600" />
+              <span className="font-medium">Phone:</span> 8109693372
+            </p>
+            <p className="flex items-center gap-2 mt-2">
+              <MdEmail className="text-green-700" />
+              <span className="font-medium">Email:</span> info@royaltraders.com
+            </p>
+            <p className="flex items-center gap-2 mt-2">
+              <FaWhatsapp className="text-green-500" />
+              <span className="font-medium">WhatsApp:</span>
+              <a
+                href="https://wa.me/918109693372"
+                target="_blank"
+                rel="noreferrer"
+                className="text-blue-600 underline"
+              >
+                Chat with us
+              </a>
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold text-xl text-gray-800 flex items-center gap-2 mb-1">
+              <MdAccessTime className="text-yellow-600" />
+              Business Hours
+            </p>
+            <p className="pl-7">Monday - Saturday: 10:00 AM – 8:00 PM</p>
+            <p className="pl-7">Sunday: Closed</p>
+          </div>
         </div>
       </div>
-    </section>
+
+      {/* Google Maps */}
+      <div className="mb-28">
+        <p className="text-xl font-semibold mb-4 text-center text-gray-800">Find Us on Map</p>
+        <div className="w-full h-[300px] md:h-[400px]">
+          <iframe
+            title="Store Location"
+            src="https://www.google.com/maps?q=Jawahar+Marg+Siyaganj+Indore+MP&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </div>
   );
 };
 
